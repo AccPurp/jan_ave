@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Infinix Specification</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="brand">Infinix</a>
+            <div class="navigation">
+                <a href="index.html">Home</a>
+                <a href="all_phones.html">All Phones</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="suggestions.html">Suggestions</a>
+            </div>
+        </header>
+        <section class="home">
+            <video src="vid_1.mp4" muted autoplay loop class="video-slider active"></video>
+            <video src="vid_2.mp4" muted autoplay loop class="video-slider"></video>
+            <video src="vid_3.mp4" muted autoplay loop class="video-slider"></video>
+            <video src="vid_4.mp4" muted autoplay loop class="video-slider"></video>
+            <video src="vid_5.mp4" muted autoplay loop class="video-slider"></video>
+            <div class="slider-navigation">
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+        <script>
+            const btns = document.querySelectorAll('.nav-btn');
+            const slides = document.querySelectorAll('.video-slider');
+            var sliderNav = function(index){
+                btns.forEach((btn)=>{
+                    btn.classList.remove('active');
+                });
+                slides.forEach((slide)=>{
+                    slide.classList.remove('active');
+                });
+                btns[index].classList.add('active');
+                slides[index].classList.add('active');
+            }
+            btns.forEach((btn,i)=>{
+                btn.addEventListener('click',()=>{
+                    sliderNav(i);
+                })
+            })
+        </script>
+        
+    </body>
+</html>
